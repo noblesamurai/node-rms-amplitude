@@ -1,7 +1,7 @@
 {
   "name": "@noblesam/rms-amplitude",
   "description": "Get RMS amplitude of an audio file.",
-  "version": "1.0.0-init.2",
+  "version": "1.0.0-init.3",
   "author": "Tim Allen <tim@noblesamurai.com>",
   "license": "BSD",
   "main": "src/index.js",
