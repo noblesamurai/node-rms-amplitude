@@ -1,5 +1,5 @@
 {
-  "name": "rms-amplitude",
+  "name": "@noblesam/rms-amplitude",
   "description": "Get RMS amplitude of an audio file.",
   "version": "1.0.0-init.0",
   "author": "Tim Allen <tim@noblesamurai.com>",
@@ -27,7 +27,9 @@
     "node": "10.x",
     "npm": "6.x"
   },
-  "dependencies": {},
+  "dependencies": {
+    "tempy": "^0.3.0"
+  },
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
