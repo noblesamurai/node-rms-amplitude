@@ -7,4 +7,8 @@ describe('rms-amplitude', function () {
     const result = await rmsAmplitude(path.join(__dirname, 'fixtures/Allure10.mp3'));
     expect(result).to.be.a('number');
   });
+  it('handles a .mp4 file', async function () {
+    const result = await rmsAmplitude(path.join(__dirname, 'fixtures/user_video-30.mp4'));
+    expect(result).to.be.a('number');
+  });
 });
