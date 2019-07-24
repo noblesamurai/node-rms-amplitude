@@ -8,7 +8,7 @@ const tempy = require('tempy');
  * @param {string} opts.ffmpeg ffmpeg full path
  * @param {string} opts.sox sox full path
  */
-module.exports = async function sox (filename, opts) {
+module.exports = async function sox (filename, opts = {}) {
   const { ffmpeg = 'ffmpeg', sox = 'sox' } = opts;
   const tempfile = tempy.file({ extension: 'wav' });
   await exec(`${ffmpeg} -i ${filename} ${tempfile}`);
