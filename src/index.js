@@ -13,6 +13,7 @@ module.exports = async function sox (filename, opts = {}) {
   const tempfile = tempy.file({ extension: 'wav' });
   await exec(`${ffmpeg} -i ${filename} ${tempfile}`);
   const { stderr } = await exec(`${sox} ${tempfile} -n stat`);
-  const parsed = stderr.match(/RMS[ ]+amplitude:[ ]+([\d.]+)/);
-  return parsed && parseFloat(parsed[1]);
+  const rms = stderr.match(/RMS[ ]+amplitude:[ ]+([\d.]+)/);
+  const max = stderr.match(/Maximum[ ]+amplitude:[ ]+([\d.]+)/);
+  return rms && max && { rms: parseFloat(rms[1]), max: parseFloat(max[1]) };
 };
