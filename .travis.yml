@@ -10,5 +10,10 @@ before_script:
 script: npm run coverage
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+addons:
+  apt:
+    packages:
+    - ffmpeg
+    - sox
 cache:
   - npm
